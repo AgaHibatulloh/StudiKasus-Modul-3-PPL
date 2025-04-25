@@ -8,22 +8,22 @@ use Tests\DuskTestCase;
 
 class LoginTest extends DuskTestCase
 {
-    // use DatabaseMigrations;
     /**
-     * A Dusk test example.
+     * @group step2
+     * @group login
      */
     public function testLogin(): void
     {
         $this->browse(callback: function (Browser $browser): void {
 
             $browser->visit(url: '/')
-                    ->assertSee(text: 'started')
-                    ->clickLink(Link: 'Log in')
+                    ->assertSee(text: 'Enterprise Application Development') 
+                    ->clickLink(link: 'Log in') 
                     ->assertPathIs(path: '/login')
-                    ->type(field: 'email', value: 'admin1234@gmail.com')
+                    ->type(field: 'email', value: 'admin12345@gmail.com')
                     ->type(field: 'password', value: 'password')
                     ->press(button: 'LOG IN')
-                    ->assertPathIs(path: '/dashboard');          
+                    ->assertPathIs(path: '/dashboard');         
             
         });
     }

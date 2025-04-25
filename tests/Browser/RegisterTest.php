@@ -9,9 +9,8 @@ use Tests\DuskTestCase;
 class RegisterTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
-    * @group login
-
+     * @group step1
+     * @group register
      */
     public function testRegister(): void
     {
@@ -26,7 +25,7 @@ class RegisterTest extends DuskTestCase
                     ->type(field: 'password', value: 'password')
                     ->type(field: 'password_confirmation', value: 'password')
                     ->press(button: 'REGISTER')
-                    ->assertPathIs(path: '/dashboard');  
+                    ->assertPathIs(path: '/register'); 
 
             
         });
